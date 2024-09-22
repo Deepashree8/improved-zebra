@@ -2,9 +2,30 @@
 <html>
 <head>
     <title>Carbon Footprint Tracker</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+            }
+        .card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+    </style>
 </head>
+
 <body>
-    <h1>Log Your Purchase</h1>
+    <div class="container mt-5">
+        <h1 class="text-center">Carbon Footprint Tracker</h1>
+    </div>
+    <div class="card-header">
+        Add a Purchase
+    </div>
     <form method="POST">
         {% csrf_token %}
         <label for="category">Select Category:</label>
