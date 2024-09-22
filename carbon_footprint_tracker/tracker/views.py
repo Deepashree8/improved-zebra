@@ -5,7 +5,7 @@ from .models import Purchase, PurchaseCategory
 def home(request):
     if request.method == 'POST':
         category_id = request.POST.get('category')
-        amount = request.POST.get('amount')
+        amount = float(request.POST.get('amount'))
         category = PurchaseCategory.objects.get(id=category_id)
         purchase = Purchase.objects.create(category=category, amount=amount)
         carbon_footprint = purchase.carbon_footprint()
