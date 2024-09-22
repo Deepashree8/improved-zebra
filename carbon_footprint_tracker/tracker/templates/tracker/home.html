@@ -1,21 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon Footprint Tracker</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
-            }
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
         .card-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-}
-
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1s;
+        }
+        form {
+            background-color: white;
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        form:hover {
+            transform: scale(1.02);
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 
@@ -29,16 +86,12 @@
     <form method="POST">
         {% csrf_token %}
         <label for="category">Select Category:</label>
-        <select name="category">
+        <select name="category" class="form-control">
             {% for category in categories %}
                 <option value="{{ category.id }}">{{ category.name }}</option>
             {% endfor %}
         </select>
         <br>
-        <!-- <label for="amount">Amount:</label>
-        <input type="number" step="0.01" name="amount" required>
-        <br>
-        <button type="submit">Submit</button> -->
         <div class="mb-3">
             <label for="amount" class="form-label">Amount Spent ($)</label>
             <input type="number" class="form-control" id="amount" placeholder="Enter amount" required>
