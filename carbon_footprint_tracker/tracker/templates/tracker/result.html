@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,17 @@
     background-color: white; /* Optional: Set background color */
     border-radius: 0.25rem; /* Optional: Add rounded corners */
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    background-image: url('{% static "tracker/image.jpg" %}'); 
+    background-size: cover; /* Cover the entire page */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Center the image */
+    height: 30vh; 
+    color: #343a40;
+}
+
     </style>
 </head>
 <body>
