@@ -2,11 +2,25 @@
 <html>
 <head>
     <title>Carbon Footprint Result</title>
+    <style>
+        .container {
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 600px; /* Set a maximum width for better responsiveness */
+    width: 100%; /* Full width up to the max */
+    padding: 20px; /* Optional: Add padding inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for a card effect */
+    background-color: white; /* Optional: Set background color */
+    border-radius: 0.25rem; /* Optional: Add rounded corners */
+}
+    </style>
 </head>
 <body>
     <h1>Your Carbon Footprint</h1>
+    <div class="container">
     <p>Estimated Carbon Footprint: {{ carbon_footprint }} kg CO2</p>
     <p>Tip: Consider alternatives to reduce your footprint.</p>
     <a href="{% url 'home' %}">Log another purchase</a>
+    </div>
 </body>
 </html>
