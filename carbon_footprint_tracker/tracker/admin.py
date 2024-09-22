@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import PurchaseCategory, Purchase
+
+admin.site.register(PurchaseCategory)
+admin.site.register(Purchase)
+
