@@ -1,12 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Carbon Footprint Tracker</title>
     <style>
+        
         body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
-    background-image: url('/workspaces/improved-zebra/carbon_footprint_tracker/tracker/templates/tracker/image.jpg'); 
+    background-image: url('{% static "tracker/image.jpg" %}'); 
     color: #343a40;
             }
         .card-header {
